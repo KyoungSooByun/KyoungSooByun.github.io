@@ -11252,6 +11252,7 @@ body {
 #poketmonSelect  button {
   margin-bottom:2px;
   color: #212529;
+  padding: 0.3rem 0.5rem;
 }
 
 #poketmonSelect  button.l5{
