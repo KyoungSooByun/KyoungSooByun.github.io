@@ -82,5 +82,17 @@ $(document).ready(function(){
     $('#datatablesSimple td:contains(4)').addClass("lv4");
     $('#datatablesSimple td:contains(5)').addClass("lv5");
     $("#poketmonSelect tbody tr").css("display", "none");
+
+    $("#datatablesSimple tbody td").click(function(){
+        let val = $(this).text().split(" ");
+        if($(this).hasClass("on")) {
+            $(this).removeClass("on");
+            $('#datatablesSimple td:contains(' + val[1] + ')').removeClass("on");
+        }
+        else{
+            $(this).addClass("on");            
+            $('#datatablesSimple td:contains(' + val[1] + ')').addClass("on");
+        }
+    });
 });
 
