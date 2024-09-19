@@ -27,7 +27,9 @@ window.addEventListener('DOMContentLoaded', event => {
 
 $(document).ready(function(){
     $("#poketmonSelect tbody button").click(function(){
-        let val = $(this).text();
+        let lv = 5 - Number($(this).parent().parent().data("index"));
+        let val = lv + " " + $(this).text();
+
         if($(this).hasClass("on")) {
             $(this).removeClass("on");
             $('#datatablesSimple td:contains(' + val + ')').removeClass("on");
@@ -84,14 +86,19 @@ $(document).ready(function(){
     $("#poketmonSelect tbody tr").css("display", "none");
 
     $("#datatablesSimple tbody td").click(function(){
-        let val = $(this).text().split(" ");
+        let val = $(this).text();
+        let valArr = $(this).text().split(" ");
+        let tr = Number(-1  * (Number(valArr[0])-5));
+
         if($(this).hasClass("on")) {
             $(this).removeClass("on");
-            $('#datatablesSimple td:contains(' + val[1] + ')').removeClass("on");
+            $('#datatablesSimple td:contains(' + val + ')').removeClass("on");
+            $("#poketmonSelect tbody tr:eq("+tr+") button:contains("+valArr[1]+")").removeClass("on");
         }
         else{
             $(this).addClass("on");            
-            $('#datatablesSimple td:contains(' + val[1] + ')').addClass("on");
+            $('#datatablesSimple td:contains(' + val + ')').addClass("on");
+            $("#poketmonSelect tbody tr:eq("+tr+") button:contains("+valArr[1]+")").addClass("on");
         }
     });
 });

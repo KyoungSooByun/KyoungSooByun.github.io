@@ -11266,14 +11266,24 @@ body {
   background-color:#ffc107;
 }
 
+#poketmonSelect  button.reset{
+  background-color:#198754;
+  color: #fff;
+}
+
 #poketmonSelect  button.on{
   background-color:#6c757d;
   color: #fff;
 }
 
+#datatablesSimple thead th{
+  background-color:#343a40 !important;
+  color:#fff !important;
+}
+
 #datatablesSimple td.on{
   background-color:#dc3545 !important;
-  color:#fff;
+  color:#fff !important;
 }
 
 #datatablesSimple td.lv3{
@@ -11289,4 +11299,29 @@ body {
 #datatablesSimple td.lv5{
   background-color:#d9c6fc;
   color: #212529 !important;
+}
+
+#datatablesSimple td.lv3.on{
+  background-color:#dc3545 !important;
+  color:#fff !important;
+}
+
+#datatablesSimple td.lv4.on{
+  background-color:#dc3545 !important;
+  color:#fff !important;
+}
+
+#datatablesSimple td.lv5.on{
+  background-color:#dc3545 !important;
+  color:#fff !important;
+}
+
+#poketmonList {
+  padding: 0;
+}
+
+#poketmonList .card-body {
+  flex: 1 1 auto;
+  padding: 0;
+  color: var(--bs-card-color);
 }
