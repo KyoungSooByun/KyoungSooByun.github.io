@@ -11154,8 +11154,8 @@ body {
 /* TABLE */
 .datatable-table {
   border-collapse: collapse;
-  max-width: 900px !important; 
-  width: 900px  !important; 
+  max-width: 800px !important; 
+  width: 800px  !important; 
 }
 
 .datatable-table > tbody > tr > td,
