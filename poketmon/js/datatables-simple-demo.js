@@ -88,9 +88,7 @@ window.addEventListener('DOMContentLoaded', event => {
         labels : {
             info: ""
         },
-        paging: false,
-        fixedColumns: true,
-        fixedHeight:true
+        paging: false
     };
 
     
