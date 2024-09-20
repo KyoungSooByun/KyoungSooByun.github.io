@@ -86,9 +86,9 @@ $(document).ready(function(){
     $("#poketmonSelect tbody tr").css("display", "none");
 
     $("#datatablesSimple tbody td").click(function(){
-        let val = $(this).text();
-        let valArr = $(this).text().split(" ");
-        let tr = Number(-1  * (Number(valArr[0])-5));
+        let val     = $(this).text();
+        let valArr  = $(this).text().split(" ");
+        let tr      = Number(-1  * (Number(valArr[0])-5));
 
         if($(this).hasClass("on")) {
             $(this).removeClass("on");
@@ -100,6 +100,44 @@ $(document).ready(function(){
             $('#datatablesSimple td:contains(' + val + ')').addClass("on");
             $("#poketmonSelect tbody tr:eq("+tr+") button:contains("+valArr[1]+")").addClass("on");
         }
+    });
+
+    $(".chkline").click(function(){
+        let line    = $(this).data('line');
+        let display = $(this).prop('checked') ? "" : "none";
+        $('#datatablesSimple thead tr').each(function(){
+            $(this).find('th:eq(' + line + ')').css("display", display);
+        });
+
+        $('#datatablesSimple tbody tr').each(function(){
+            $(this).find('td:eq(' + line + ')').css("display", display);
+        });
+
+        let width = Number($(".chkline:checked").length) * 100;
+        $("#datatablesSimple").attr('style', "width:" + width + "px !important;");
+
+        console.log( $("#datatablesSimple").width());
+    });
+
+    $("#btnLineReset").click(function(){
+        $('#datatablesSimple thead tr').each(function(){
+            $(this).find('th').css("display", "");
+        });
+
+        $('#datatablesSimple tbody tr').each(function(){
+            $(this).find('td').css("display", "");
+        });
+
+        $(".chkline").prop('checked', true);
+        $("#datatablesSimple").attr('style', "width:800px !important;");
+    });
+
+    $("#btnSet").click(function(){
+        let display_name = $('#setArea').css("display") == "flex" ? "설정열기" : "설정닫기";
+        let display      = $('#setArea').css("display") == "flex" ? "none" : "flex";
+        
+        $('#setArea').css("display", display);
+        $(this).find('button').text(display_name);
     });
 });
 

@@ -19,8 +19,8 @@
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
   --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
+  --bs-teal: #bee9dc;
+  --bs-cyan: #a3e7f5;
   --bs-black: #000;
   --bs-white: #fff;
   --bs-gray: #6c757d;
@@ -4219,7 +4219,7 @@ textarea.form-control-lg {
 
 .card-body {
   flex: 1 1 auto;
-  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  padding: 0.5rem 0.5rem;
   color: var(--bs-card-color);
 }
 
@@ -11089,7 +11089,7 @@ body {
 }
 
 .datatable-top {
-  padding: 0 0 1rem;
+  padding: 0;
 }
 
 .datatable-bottom {
@@ -11249,12 +11249,13 @@ body {
   width: 100%  !important; 
 }
 
-#poketmonSelect  button {
+#poketmonSelect button {
   background-color: #dee2e6;
   margin-bottom:2px;
   color: #212529;
-  padding: 0.3rem 0.5rem;
+  padding: 0.1rem 0.2rem;
   font-weight: bold;
+  font-size: 13px;
 }
 
 #poketmonSelect  button.l5{
@@ -11267,8 +11268,8 @@ body {
 }
 
 #poketmonSelect  button.reset{
-  background-color:#198754;
-  color: #fff;
+  background-color:#bee9dc;
+  color: #000;
 }
 
 #poketmonSelect  button.on{
@@ -11324,4 +11325,9 @@ body {
   flex: 1 1 auto;
   padding: 0;
   color: var(--bs-card-color);
+}
+
+
+.chk > span{
+  vertical-align: 1px;
 }
