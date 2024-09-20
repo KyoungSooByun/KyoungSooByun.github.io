@@ -130,5 +130,12 @@ $(document).ready(function(){
         $('#setArea').css("display", display);
         $(this).find('button').text(display_name);
     });
+
+    $("#btnRush5Popup").click(function(){
+        $("#dialog").fadeIn()
+    });
+    $("#btnPopupClose").click(function(){
+        $("#dialog").fadeOut()
+    });
 });
 
