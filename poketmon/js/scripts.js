@@ -106,8 +106,6 @@ $(document).ready(function(){
 
         let width = Number($(".chkline:checked").length) * 100;
         $("#datatablesSimple").attr('style', "width:" + width + "px !important;");
-
-        console.log( $("#datatablesSimple").width());
     });
 
     $("#btnLineReset").click(function(){        
@@ -120,7 +118,7 @@ $(document).ready(function(){
         });
 
         $(".chkline").prop('checked', true);
-        $("#datatablesSimple").attr('style', "width:800px !important;");
+        $("#datatablesSimple").attr('style', "max-width:800px !important;  width:800px !important;");
     });
 
     $("#btnSet").click(function(){
@@ -145,6 +143,7 @@ $(document).ready(function(){
         $(this).addClass("on");
         
         $('#viewtable tr:eq(1)').css("display", "flex"); 
+        $("#datatablesSimple").attr('style', "max-width:800px !important; width:800px !important;");
     });
 
     $("#btnViewW").click(function(){
@@ -161,7 +160,7 @@ $(document).ready(function(){
         $("#btnViewB").removeClass("on");
         $(this).addClass("on");
 
-
+        $("#datatablesSimple").attr('style', "max-width:100% !important; width:100% !important;");
         $('#viewtable tr:eq(1)').css("display", "none"); 
     });
     
