@@ -119,7 +119,7 @@ $(document).ready(function(){
         console.log( $("#datatablesSimple").width());
     });
 
-    $("#btnLineReset").click(function(){
+    $("#btnLineReset").click(function(){        
         $('#datatablesSimple thead tr').each(function(){
             $(this).find('th').css("display", "");
         });
