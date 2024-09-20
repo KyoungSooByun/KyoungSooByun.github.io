@@ -134,8 +134,38 @@ $(document).ready(function(){
     $("#btnRush5Popup").click(function(){
         $("#dialog").fadeIn()
     });
+
     $("#btnPopupClose").click(function(){
         $("#dialog").fadeOut()
     });
+
+    $("#btnViewB").click(function(){
+        $("#datatablesSimple").removeClass("wide");
+        $("#btnViewW").removeClass("on");
+        $(this).addClass("on");
+
+        $('#viewtable tr:eq(1)').css("display", "flex"); 
+    });
+
+    $("#btnViewW").click(function(){
+        $('#datatablesSimple thead tr').each(function(){
+            $(this).find('th').css("display", "");
+        });
+
+        $('#datatablesSimple tbody tr').each(function(){
+            $(this).find('td').css("display", "");
+        });
+
+        $(".chkline").prop('checked', true);
+        $("#datatablesSimple").attr('style', "width:800px !important;");
+
+        $("#datatablesSimple").addClass("wide");
+        $("#btnViewB").removeClass("on");
+        $(this).addClass("on");
+
+
+        $('#viewtable tr:eq(1)').css("display", "none"); 
+    });
+    
 });
 

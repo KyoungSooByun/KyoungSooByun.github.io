@@ -15,7 +15,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="#">포켓몬 가오레 배열표 v1.0</a>
+            <a class="navbar-brand ps-3" href="#">포켓몬 가오레 배열표 v1.5</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search
@@ -63,7 +63,7 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main style="overflow-y:scroll; width:100%; height:92%; position: fixed;">
                     <div class="container-fluid">
                         <h5 class="mt-2">러시 5탄 
                             <span id="btnSet" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#a3e7f5;color: #000;">설정닫기</button></span>
@@ -191,19 +191,32 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="small text-muted mt-2" >* 보고 싶은 라인만 선택</div>
-                                <div class="small">
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="0" checked> <span>라인1</span></label>
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="1" checked> <span>라인2</span></label>
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="2" checked> <span>라인3</span></label>
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="3" checked> <span>라인4</span></label>                        
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="4" checked> <span>라인5</span></label>
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="5" checked> <span>라인6</span></label>
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="6" checked> <span>라인7</span></label>
-                                    <label class="chk"><input type="checkbox" class="chkline" data-line="7" checked> <span>라인8</span></label>                                    
-                                    <button id="btnLineReset" style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#bee9dc;color: #000;">전체선택</button>
-                                </div>
-
+                                <table id="viewtable" class="datatable-table mt-1">  
+                                    <tbody>
+                                        <tr>
+                                            <td>                                                
+                                                <button id="btnViewB" class="on">기본 보기</button>
+                                                <button id="btnViewW" >한눈에 보기</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="small">           
+                                                    <div class="small text-muted mt-2" >* 체크 라인 선택</div>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="0" checked> <span>라인1</span></label>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="1" checked> <span>라인2</span></label>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="2" checked> <span>라인3</span></label>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="3" checked> <span>라인4</span></label>                        
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="4" checked> <span>라인5</span></label>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="5" checked> <span>라인6</span></label>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="6" checked> <span>라인7</span></label>
+                                                    <label class="chk"><input type="checkbox" class="chkline" data-line="7" checked> <span>라인8</span></label>                                    
+                                                    <button id="btnLineReset" style="padding: 0.1rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#bee9dc;color: #000;">전체선택</button>                                    
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <div class="card mb-4" id="poketmonList">
