@@ -143,7 +143,7 @@ $(document).ready(function(){
         $("#datatablesSimple").removeClass("wide");
         $("#btnViewW").removeClass("on");
         $(this).addClass("on");
-
+        $("#datatablesSimple").attr('style', "max-width:800px !important;width:800px !important;");        
         $('#viewtable tr:eq(1)').css("display", "flex"); 
     });
 
@@ -157,8 +157,6 @@ $(document).ready(function(){
         });
 
         $(".chkline").prop('checked', true);
-        $("#datatablesSimple").attr('style', "width:800px !important;");
-
         $("#datatablesSimple").addClass("wide");
         $("#btnViewB").removeClass("on");
         $(this).addClass("on");
