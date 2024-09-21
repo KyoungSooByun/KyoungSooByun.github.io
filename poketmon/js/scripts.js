@@ -164,5 +164,6 @@ $(document).ready(function(){
         $('#viewtable tr:eq(1)').css("display", "none"); 
     });
     
+    $("#btnViewW").trigger('click');
 });
 
