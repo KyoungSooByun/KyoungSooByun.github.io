@@ -129,21 +129,28 @@ $(document).ready(function(){
         $(this).find('button').text(display_name);
     });
 
-    $("#btnRush5Popup").click(function(){
-        $("#dialog").fadeIn()
-    });
+    $(".popup").click(function(){
+        let type = $(this).data("content");
+
+        $(".title").css("display", "none");
+        $(".popupContent").css("display", "none");
+        
+        $("#popupTitle"+ type).css("display", "block");
+        $("#popupContent"+ type).css("display", "block");
+        $("#dialog").fadeIn();
+    })
 
     $("#btnPopupClose").click(function(){
         $("#dialog").fadeOut()
     });
 
-    $("#btnRush5CatalogPopup").click(function(){
-        $("#dialog2").fadeIn()
+
+    $(".simg").css("display", "none");
+    $(".sBtn").click(function(){
+        $(".simg").css("display", "none");
+        $(".s_" + $(this).data("type")).css("display", "block");        
     });
 
-    $("#btnPopupClose2").click(function(){
-        $("#dialog2").fadeOut()
-    });
 
     $("#btnViewB").click(function(){
         $("#datatablesSimple").removeClass("wide");
