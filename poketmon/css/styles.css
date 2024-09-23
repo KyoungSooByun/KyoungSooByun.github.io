@@ -11406,3 +11406,21 @@ body {
   background-color:#6c757d;
   color: #fff;
 }
+
+#supporter button {
+  background-color: #dee2e6;
+  margin-top:2px;
+  color: #212529;
+  padding: 0.2rem 0.3rem;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#supporter button.on{
+  background-color:#6c757d;
+  color: #fff;
+}
+
+.simg {
+  width:100%;
+}

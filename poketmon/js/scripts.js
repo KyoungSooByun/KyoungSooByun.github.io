@@ -148,7 +148,9 @@ $(document).ready(function(){
     $(".simg").css("display", "none");
     $(".sBtn").click(function(){
         $(".simg").css("display", "none");
-        $(".s_" + $(this).data("type")).css("display", "block");        
+        $(".s_" + $(this).data("type")).css("display", "block");
+        $(".sBtn").removeClass("on");
+        $(this).addClass("on");
     });
 
 
