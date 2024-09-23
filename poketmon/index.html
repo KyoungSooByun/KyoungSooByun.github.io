@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>포켓몬 가오레 배열표 Create By 세존</title>
         <link href="css/style.min.css" rel="stylesheet" />
-        <link href="css/styles.css?2024092201" rel="stylesheet" />
+        <link href="css/styles.css?2024092301" rel="stylesheet" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -68,6 +68,7 @@
                         <h5 class="mt-2">러시 5탄 
                             <span id="btnSet" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#a3e7f5;color: #000;">설정닫기</button></span>
                             <span id="btnRush5Popup" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">5성 상성표</button></span>
+                            <span id="btnRush5CatalogPopup" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">카달로그</button></span>
                         </h5>
                         <!--
                         <ol class="breadcrumb mb-4">
@@ -221,12 +222,6 @@
                             </div>
                         </div>
                         <div class="card mb-4" id="poketmonList">
-                            <!--
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                러시 5탄 배열표
-                            </div>
-                            -->
                             <div class="card-body">
                                 <table id="datatablesSimple">                                   
                                 </table>
@@ -251,11 +246,23 @@
               </div>
             </div>
           </div>
-
-        <script src="js/data.js?2024092201"></script>
+          <div id="dialog2" class="dialog">
+            <div class="tb">
+              <div class="inner" style="max-width:95%;">
+                <div class="top">
+                  <div class="title">러시 5탄 카달로그</div>
+                  <button id="btnPopupClose2" style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">닫기</button>
+                </div>
+                <div class="ct" >
+                    <img src="assets/img/rush5_c.png" style="width:100%">
+                </div>
+              </div>
+            </div>
+          </div>
+        <script src="js/data.js?2024092301"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js?2024092201"></script>
+        <script src="js/scripts.js?2024092301"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js?2024092201"></script>
+        <script src="js/datatables-simple-demo.js?2024092301"></script>
     </body>
 </html>

@@ -137,6 +137,14 @@ $(document).ready(function(){
         $("#dialog").fadeOut()
     });
 
+    $("#btnRush5CatalogPopup").click(function(){
+        $("#dialog2").fadeIn()
+    });
+
+    $("#btnPopupClose2").click(function(){
+        $("#dialog2").fadeOut()
+    });
+
     $("#btnViewB").click(function(){
         $("#datatablesSimple").removeClass("wide");
         $("#btnViewW").removeClass("on");
