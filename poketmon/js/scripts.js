@@ -194,6 +194,13 @@ $(document).ready(function(){
         $("#datatablesSimple").attr('style', "max-width:100% !important; width:100% !important;");
         $('#viewtable tr:eq(1)').css("display", "none"); 
     });
+
+    $(document).mouseup(function (e){
+        var LayerPopup = $(".tb");
+        if(LayerPopup.has(e.target).length === 0){
+            $(".dialog").hide();
+        }
+    });
     
     $("#btnViewW").trigger('click');
 });
