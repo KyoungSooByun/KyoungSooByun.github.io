@@ -11424,3 +11424,37 @@ body {
 .simg img{
   width:100%;
 }
+
+
+#checkTable.datatable-table {
+  max-width: 100% !important; 
+  width: 100%  !important; 
+}
+
+#checkTable button {
+  background-color: #dee2e6;
+  margin-top:2px;
+  color: #212529;
+  padding: 0.2rem 0.3rem;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#checkTable  button.l5{
+  background-color:#6610f2;
+  color:#fff;
+}
+
+#checkTable  button.h{
+  background-color:#ffc107;
+}
+
+#checkTable  button.reset{
+  background-color:#bee9dc;
+  color: #000;
+}
+
+#checkTable  button.on{
+  background-color:#6c757d;
+  color: #fff;
+}
