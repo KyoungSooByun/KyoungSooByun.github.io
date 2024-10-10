@@ -22,15 +22,17 @@ $(document).ready(function(){
         let chk = $("#check_line").val();
         let html = $(this)[0].outerHTML;
 
-        $("#checkTable tr:eq("+chk+") td:eq(1)").append("<div>" + html + "<button onclick='$(this).parent().remove();'>X</button></div>");       
+        $("#checkTable tr:eq("+chk+") td:eq(1)").append("<div>" + html + " <button onclick='$(this).parent().remove();'>X</button></div>");       
+
+        checkPoketmon();       
     });
 
-    $("#btnPoketmon1, #btnPoketmon2, #btnPoketmon3, #btnPoketmon4, #btnPoketmon5").click(function(){        
+    $("#btnPoketmon3, #btnPoketmon4, #btnPoketmon5").click(function(){        
         $("#poketmonSelect tbody tr").css("display", "none");        
 
         if(!$(this).hasClass("on")) {                        
-            $("#poketmonSelect tbody tr:eq(" + $(this).index() + ")").css("display", "table-row");
-            $("#btnPoketmon1, #btnPoketmon2, #btnPoketmon3, #btnPoketmon4, #btnPoketmon5").removeClass("on");
+            $("#poketmonSelect tbody tr:eq(" + ($(this).index()-1) + ")").css("display", "table-row");
+            $("#btnPoketmon3, #btnPoketmon4, #btnPoketmon5").removeClass("on");
             $(this).addClass("on");
         }
         else{
@@ -69,5 +71,39 @@ $(document).ready(function(){
         }
     });
     
+    function checkPoketmon(){
+        var arr3 = [];
+        var arr4 = [];
+
+        $(".checkButton3 button").each(function(){
+            let cnt = $("#checkTable button:contains(" + $(this).text() + ")").length;
+            if(cnt > 1){
+                var arr = {'name': $(this).text(), 'cnt' : cnt};
+                arr3.push(arr);
+            }
+        });
+
+        let checkPoketmon3 = "";
+        $.each(arr3, function(idx, item){
+            checkPoketmon3 += checkPoketmon3 != "" ? ", " + item.name + "(" + item.cnt + ")" : item.name + "(" + item.cnt + ")";
+        });
+
+        $(".checkButton4 button").each(function(){
+            let cnt = $("#checkTable button:contains(" + $(this).text() + ")").length;
+            if(cnt > 1){
+                var arr = {'name': $(this).text(), 'cnt' : cnt};
+                arr4.push(arr);
+            }
+        });
+
+        $("#checkPoketmon3").html(checkPoketmon3);
+
+        let checkPoketmon4 = "";
+        $.each(arr4, function(idx, item){
+            checkPoketmon4 += checkPoketmon4 != "" ? ", " + item.name + "(" + item.cnt + ")" : item.name + "(" + item.cnt + ")";
+        });
+
+        $("#checkPoketmon4").html(checkPoketmon4);
+    }
 });
 
