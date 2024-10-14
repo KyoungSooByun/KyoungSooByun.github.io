@@ -41,7 +41,8 @@ $(document).ready(function(){
     });
 
     $("#btnReset").click(function(){
-        $("#checkTable tr td:eq(1)").html('');
+        $("#checkTable tr > td:nth-child(2)").html('');
+        $("#checkPoketmon3, #checkPoketmon4").html('');              
     });
 
     $("#poketmonSelect tbody tr").css("display", "none");
