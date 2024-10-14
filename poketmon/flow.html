@@ -52,7 +52,7 @@
                             -->
                             <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                러시 5탄 Flow Check
+                                러시 5탄 Flow Check                                
                             </a>
                         </div>
                     </div>
@@ -65,9 +65,11 @@
             <div id="layoutSidenav_content">
                 <main style="overflow-y:scroll; width:100%; height:92%; position: fixed;">
                     <div class="container-fluid">
-                        <h5 class="mt-2">러시 5탄</h5>
+                        <h5 class="mt-2">러시 5탄 Flow Check
+                            <span class="popup" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">TIP</button></span>
+                        </h5>
                         <div class="card mb-2" id="setArea">
-                            <div class="card-body">                                
+                            <div class="card-body mb-4">                                
                                 <table id="poketmonSelect">  
                                     <thead>
                                         <tr>
@@ -160,14 +162,53 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-body" style="font-weight:bold;"> 
-                                3,4성 체크대상 : <br>
-                                <span id="checkPoketmon3"></span><br><br>
-                                <span id="checkPoketmon4"></span>
-                            </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <table>  
+                                    <thead>
+                                        <tr>
+                                            <th style="width:30%;">
+                                                노출배열 : &nbsp;
+                                            </th>
+                                            <th>
+                                                <select id="line1">
+                                                    <option value="">배열선택1</option>
+                                                    <option value="0">1</option>
+                                                    <option value="1">2</option>
+                                                    <option value="2">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="4">5</option>
+                                                    <option value="5">6</option>
+                                                    <option value="6">7</option>
+                                                    <option value="7">8</option>
+                                                </select>
+                                                <select id="line2">
+                                                    <option value="">배열선택2</option>
+                                                    <option value="0">1</option>
+                                                    <option value="1">2</option>
+                                                    <option value="2">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="4">5</option>
+                                                    <option value="5">6</option>
+                                                    <option value="6">7</option>
+                                                    <option value="7">8</option>
+                                                </select>
+                                            </th>
+                                        </tr>  
+                                        <tr>
+                                            <th>중복 : &nbsp;</th>
+                                            <th id="checkPoketmonLine"></th>
+                                        </tr>                                      
+                                    </thead> 
+                                </table>
+                            </div>                           
                         </div>
                         <div class="card mb-4">
+                            <div class="card-body" style="font-weight:bold;"> 
+                                체크라인 중복 : <br>
+                                <span id="checkPoketmon3"></span><br><br>
+                                <span id="checkPoketmon4"></span>                                
+                            </div>
                             <div class="card-body" >                                
                                 <table class="datatable-table mt-1" id="checkTable">
                                     <tr>
@@ -207,10 +248,61 @@
                         </div>                       
                     </div>
                 </main>
-                
             </div>
         </div>
+        <div id="dialog" class="dialog">
+            <div class="tb">
+              <div class="inner" style="max-width:95%;">
+                <div class="top">
+                  <div class="title" >띠용쓰님 Tip</div>
+                  <button id="btnPopupClose" style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">닫기</button>
+                </div>
+                <div class="ct">
+                    <div class="popupContent" >                        
+                        -혼자하기
+                        1.라인을 밀어라<br> 
+                        라인을 미는게 굉장히 중요합니다. 예를 들어 1번팩, 4번팩이 나와있는걸 알았다면
+                        5성이 나오는게 더 빠르게 나오는쪽을 계속 밀어보세요. 라인대로 밀어서 5성을 빨리보고 
+                        그시간안에 뽑을 확률이 높습니다.5성이 보이는경우에도 이거뽑고 저거뽑고 하지마시고
+                        딱 뽑고싶은라인 하나만잡고 그것만 뽑으시면 됩니다.<br><br> 
 
+                        2. 라인이 같은게 많아서 안보이는경우
+                        이게 사실 굉장히 어려운경우인데 저도 배열표를 굉장히 잘보는 편이지만 
+                        어떤면에서는 헷깔리기도 합니다.
+                        이럴땐 4.1.4.1 혹은 3.1.3.1 등의 높은성급 낮은성급을 번갈아 빼보세요.
+                        특히 5성이 떠있을때 경험상 4성만고집한다거나 하는것보단 빠르게 뽑히는거같습니다.<br> <br> 
+
+                        3. 5성이 있는데 메인에 몇판째 안나오는경우<br> 
+                        5성이랑 못싸우고 계속 맴돌기만할때 메인전투에서 싸우고나서 1성이 거의 잡히잖아요 그럴때 1성을 빼보세요.
+                        한두어번 하면 메인에 갑자기 잘나오실껍니다 메인에 안나와도 다음전투때 메인에서 싸워보실수
+                        있는확률이 높습니다.<br> <br> 
+
+                        4. 교환찬스에 관한 교환or  교환x<br> 
+                        이런경우는 라인대로 밀고 잘나오고 하는데 교찬이 나왔고 시도했는데 5성이 안나올경우<br> 
+                        배열표를 보시고 그라인이면 빼고 아니면 거절하세요 판이 돌아가는거보다 배열대로 나두고 디스크 내려오는게 뽑는시간이 더 빠릅니다.<br> <br> 
+
+                        - 다수의 사람들과 하는데 내차례에만 5성이 안나온다면?<br> 
+                        1. 라인을 확인해라 <br> 
+                        5성이 그림자조차 얼씬하지 않는다면 꼭 해야할일 바로 라인확인입니다. 
+                        내가 뽑고자하는 5성라인의 1.2.3성이 메인에 나와있다면 과감히 선택하세요.
+                        1.2.3성중 라인을  선택하고 그 라인의 케릭이 풀숲에 보인다면 빼주시고요.<br> <br> 
+
+                        그럼 가오레의 공식인 "메인에서 선택 후 풀숲에서 뽑으면 5성출현 업!!"
+                        이 완성 됩니다 만약 메인전투에 등장하지 않더라도 엑베에서
+                        전투할 확률이 매우 높습니다  이경우는 메인전투 90프로 정도라 느낍니다.<br> <br> 
+
+                        2. 의미없는 4성은 그만~! 라인의 4성을 선택하자<br> 
+                        메인에 4성이 나왔는데 라인이 아니라면 굳이 뽑을필요가 없다고 생각합니다.
+                        하지만 5성라인의 4성이라면 저는 무조건 선택해요 풀숲에서 나와주고 뽑고나면 보통 메인이지만
+                        내가 5성과 싸우고 못잡으면 뒷사람이 뽑을 확률이 증가하는것도 사실이긴합니다 .
+                        그래도 만나서 싸워야 뽑을수 있다는걸 잊으면 안되겠죠?
+                        혹여나 풀숲에도 나오지 않더라도 이런경우에는 메인전투에서 5성이나오면서
+                        5성 4성을 자주만나게됩니다.
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
         <script src="js/data.js?2024092307"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/flow_scripts.js?2024101401"></script>

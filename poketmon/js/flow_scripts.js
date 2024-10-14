@@ -42,7 +42,8 @@ $(document).ready(function(){
 
     $("#btnReset").click(function(){
         $("#checkTable tr > td:nth-child(2)").html('');
-        $("#checkPoketmon3, #checkPoketmon4").html('');              
+        $("#checkPoketmonLine, #checkPoketmon3, #checkPoketmon4").html('');         
+        $("#line1, #line2").val("");
     });
 
     $("#poketmonSelect tbody tr").css("display", "none");
@@ -64,6 +65,13 @@ $(document).ready(function(){
         }
     });
 
+    $(".popup").click(function(){        
+        $("#dialog").fadeIn();
+    })
+
+    $("#btnPopupClose").click(function(){
+        $("#dialog").fadeOut()
+    });
 
     $(document).mouseup(function (e){
         var LayerPopup = $(".tb");
@@ -106,5 +114,33 @@ $(document).ready(function(){
 
         $("#checkPoketmon4").html(checkPoketmon4);
     }
+    
+    $("#line1, #line2").change(function(){
+        if($("#line1").val() != "" && $("#line2").val() != ""){
+            
+            let checkPoketmonLine = "";
+            let arr1 = [];
+            let arr2 = [];
+            let rush5 = rush5Data.data;
+
+            $.each(rush5, function(idx, item){
+                let cnt = idx + 1;
+
+                if(item[$("#line1").val()].indexOf("4 ") > -1 || item[$("#line1").val()].indexOf("3 ") > -1)
+                    arr1.push(item[$("#line1").val()]);
+
+                if(item[$("#line2").val()].indexOf("4 ") > -1 || item[$("#line2").val()].indexOf("3 ") > -1)
+                    arr2.push(item[$("#line2").val()]);
+            });
+
+            $.each(arr1, function(idx, item){
+                if(arr2.indexOf(item) > -1)  {
+                    checkPoketmonLine += checkPoketmonLine!="" ? ", " + item : item;
+                }
+            });
+
+            $("#checkPoketmonLine").html(checkPoketmonLine);
+        }        
+    });
 });
 
