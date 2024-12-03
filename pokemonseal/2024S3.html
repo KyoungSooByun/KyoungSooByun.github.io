@@ -14,7 +14,7 @@
         <style>
             #container { width:100%; overflow:auto;}
             #container ul { padding:0; margin:0; white-space:nowrap; }
-            #container li { list-style-type:none; float:left;width: 25%; margin:0; padding:0; position: relative;}
+            #container li { list-style-type:none; float:left;width: 25%; height:7.8em; margin:0; padding:0; position: relative;}
             #container li img{ width: 100%;}
             #container li .complete {
                display: none;
@@ -190,7 +190,7 @@
         $.each (pokemon, function (index, el) {
             
             var html = '<li id="'+el.number+'" data-name="'+el.name+'"><img src="assets/img/' + el.number+'.jpg"><div class="complete">Get!</div></li>';
-            
+           
             if(typeof checkPokemon == "undefined" && checkPokemon!=null && checkPokemon.indexOf(el.number) >= 0)  {
                 html +=  '<div class="complete">Get!</div>';
             }
