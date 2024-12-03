@@ -129,7 +129,8 @@
         $.each (pokemon, function (index, el) {
             
             var html = '<li id="'+el.number+'" data-name="'+el.name+'"><img src="assets/img/' + el.number+'.jpg"><div class="complete">Get!</div></li>';
-            if(checkPokemon.indexOf(el.number) >= 0)  {
+
+            if(typeof checkPokemon == "undefined" && checkPokemon!=null && checkPokemon.indexOf(el.number) >= 0)  {
                 html +=  '<div class="complete">Get!</div>';
             }
 
