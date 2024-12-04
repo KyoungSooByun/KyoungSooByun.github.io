@@ -105,6 +105,7 @@
         <script>
         let checkPokemon = $.cookie('checkPokemon');
 
+        console.log("checkPokemon" , checkPokemon);
         if(typeof checkPokemon == "undefined" && checkPokemon!=null){
             checkPokemon = JSON.parse(checkPokemon);
         }
@@ -136,6 +137,8 @@
             $(".complete.on").each(function(){      
                 checkArr.push($(this).data("number"));                
             });
+
+            console.log("stringify", JSON.stringify(checkArr));
 
             $.cookie('checkPokemon', JSON.stringify(checkArr), { expires: 365, path: '/' });
         }
