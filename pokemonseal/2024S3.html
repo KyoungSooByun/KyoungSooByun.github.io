@@ -105,6 +105,10 @@
         <script>
         let checkPokemon = $.cookie('checkPokemon');
 
+        f(typeof checkPokemon == "undefined" && checkPokemon!=null){
+            checkPokemon = JSON.parse(checkPokemon);
+        }
+
         $.each (pokemon, function (index, el) {
             
             var html = '<li id="'+el.number+'" data-name="'+el.name+'"><div class="image-box"><img src="assets/img/' + el.number+'.jpg"></div><div data-number="'+el.number+'" class="complete">Get!</div></li>';
@@ -133,7 +137,7 @@
                 checkArr.push($(this).data("number"));                
             });
 
-            $.cookie('checkPokemon', checkArr, { expires: 365, path: '/' });
+            $.cookie('checkPokemon', JSON.stringify(checkArr), { expires: 365, path: '/' });
         }
         </script>
     </body>
