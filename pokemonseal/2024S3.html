@@ -105,7 +105,7 @@
         <script>
         let checkPokemon = $.cookie('checkPokemon');
 
-        f(typeof checkPokemon == "undefined" && checkPokemon!=null){
+        if(typeof checkPokemon == "undefined" && checkPokemon!=null){
             checkPokemon = JSON.parse(checkPokemon);
         }
 
