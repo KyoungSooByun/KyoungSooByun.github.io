@@ -147,6 +147,8 @@
             $("#container > ul").append(html);
         });
 
+        $(".all").text("전체("+ $("#container > ul").length+")");
+
         $("#container li").click(function(){
             if($(this).find(".complete").hasClass("on")){
                 $(this).find(".complete").removeClass("on");
@@ -155,6 +157,7 @@
                 $(this).find(".complete").addClass("on");
             }
             checkGet();
+            getCnt();
         });
 
         function checkGet(){
@@ -206,6 +209,24 @@
                 $(this).css("display", "block");
             });
         });
+        
+        function getCnt(){
+            let cnt1 = 0;
+            let cnt2 = 0;
+
+            $("#container li").each(function(){
+                if($(this).find(".complete").hasClass("on")){
+                    cnt1++;
+                }
+                else
+                    cnt2++;
+            });
+
+            $(".get").text("모은것("+ cnt1+")");
+            $(".remain").text("남은것("+ cnt2+")");
+        }
+
+        getCnt();
         </script>
     </body>
 </html>
