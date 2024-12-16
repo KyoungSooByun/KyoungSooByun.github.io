@@ -147,7 +147,7 @@
             $("#container > ul").append(html);
         });
 
-        $(".all > button").text("전체("+ $("#container > ul").length+")");
+        $(".all > button").text("전체("+ $("#container > ul > li").length+")");
 
         $("#container li").click(function(){
             if($(this).find(".complete").hasClass("on")){
