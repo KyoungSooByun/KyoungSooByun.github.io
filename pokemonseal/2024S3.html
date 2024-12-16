@@ -147,7 +147,7 @@
             $("#container > ul").append(html);
         });
 
-        $(".all").text("전체("+ $("#container > ul").length+")");
+        $(".all > button").text("전체("+ $("#container > ul").length+")");
 
         $("#container li").click(function(){
             if($(this).find(".complete").hasClass("on")){
@@ -222,8 +222,8 @@
                     cnt2++;
             });
 
-            $(".get").text("모은것("+ cnt1+")");
-            $(".remain").text("남은것("+ cnt2+")");
+            $(".get > button").text("모은것("+ cnt1+")");
+            $(".remain > button").text("남은것("+ cnt2+")");
         }
 
         getCnt();
