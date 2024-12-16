@@ -33,6 +33,10 @@
                 justify-content: center;
                 align-items: center;
             }
+
+            #container2 ul { padding:0; margin:0; white-space:nowrap; }
+            #container2 li { list-style-type:none; float:left;width: 25%;height:7.7em;margin:0; padding:0; position: relative; border:1px solid #000;}
+            
         </style> 
     </head>
     <body class="sb-nav-fixed">
@@ -88,9 +92,14 @@
             <div id="layoutSidenav_content">
                 <main style="overflow-y:scroll; width:100%; height:92%; position: fixed;">
                     <div class="container-fluid">
-                        <h5 class="mt-2">시즌 3탄</h5>       
-                        <div class="small text-muted">* 도감에서 포켓몬을 클릭해서 체크하세요!(해제도 동일)</div>
-                        <div class="small text-muted">* 브라우저 쿠키로 저장하기 떄문에 캐시 초기화 하시면 지워집니다.</div>
+                        <h5 class="mt-2">시즌 3탄
+                            <span class="all" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">전체</button></span>
+                            <span class="get" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#b1f579;color: #000;">모은것</button></span>
+                            <span class="remain" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#a3e7f5;color: #000;">남은것</button></span>
+                            <span class="popup" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">도감보기</button></span>                            
+                        </h5>       
+                        <div class="small text-muted">* 도감에서 포켓몬을 클릭해서 체크!(해제도 동일)</div>
+                        <div class="small text-muted">* 쿠키로 저장하기 때문에 캐시 초기화 하시면 안되요.</div>
                         <div id="container">
                             <ul>
                             </ul>
@@ -100,13 +109,31 @@
                 
             </div>
         </div>
+
+        <div id="dialog" class="dialog">
+            <div class="tb">
+              <div class="inner" style="max-width:95%;">
+                <div class="top">
+                  <div class="title" id="popupTitle">2024 시즌3 띠부씰 도감(154종)</div>
+                  <button id="btnPopupClose" style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">닫기</button>
+                </div>
+                <div class="ct">
+                    <div class="popupContent" id="popupContent" >
+                        <img src="assets/img/2024S3.png" style="width:100%">                        
+                        
+                    </div>                    
+                </div>
+              </div>
+            </div>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> 
         <script src="js/jquery.cookie.js" crossorigin="anonymous"></script>
         <script src="js/data.js?01" ></script>
         <script>
         let checkPokemon = $.cookie('checkPokemon');
-
+        
+        
         if(typeof checkPokemon == "undefined" && checkPokemon!=null){
             checkPokemon = JSON.parse(checkPokemon);
         }
@@ -137,8 +164,48 @@
                 checkArr.push($(this).data("number"));                
             });
 
-            $.cookie('checkPokemon', JSON.stringify(checkArr), { expires: 365, path: '/' });
+           $.cookie('checkPokemon', JSON.stringify(checkArr), { expires: 365, path: '/' });
         }
+
+        $(".popup").click(function(){
+    
+            $(".title").css("display", "none");
+            $(".popupContent").css("display", "none");
+            
+            $("#popupTitle").css("display", "block");
+            $("#popupContent").css("display", "block");
+            $("#dialog").fadeIn();
+        });
+
+        $("#btnPopupClose").click(function(){
+            $("#dialog").fadeOut();
+        });
+
+        
+        $(".all").click(function(){    
+            $("#container li").css("display", "block");
+        });
+
+        $(".remain").click(function(){    
+            $("#container li").each(function(){
+                if($(this).find(".complete").hasClass("on")){
+                    $(this).css("display", "none");
+                }
+                else
+                    $(this).css("display", "block");
+            });
+        });
+
+        $(".get").click(function(){    
+
+            $("#container li").each(function(){
+                if(!$(this).find(".complete").hasClass("on")){
+                    $(this).css("display", "none");
+                }
+                else
+                $(this).css("display", "block");
+            });
+        });
         </script>
     </body>
 </html>
