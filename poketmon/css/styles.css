@@ -11331,6 +11331,16 @@ body {
   color:#fff !important;
 }
 
+#datatablesSimple td.lv5h{
+  background-color:#ffc107 !important;
+  color:#000 !important;
+}
+
+#datatablesSimple td.lv5h.on{
+  background-color:#dc3545 !important;
+  color:#fff !important;
+}
+
 #poketmonList {
   padding: 0;
 }

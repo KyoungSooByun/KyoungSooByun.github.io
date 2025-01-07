@@ -23,25 +23,11 @@ $(document).ready(function(){
 
         if($(this).hasClass("on")) {
             $(this).removeClass("on");
-
-            if(val == "5 뮤"){                
-                $('#datatablesSimple td:contains(' + val + ')').each(function(){
-                    if($(this).text().length == 3) $(this).removeClass("on");
-                });
-            }
-            else
-                $('#datatablesSimple td:contains(' + val + ')').removeClass("on");
+            $('#datatablesSimple td:contains(' + val + ')').removeClass("on");                
         }
         else{
             $(this).addClass("on");
-            
-            if(val == "5 뮤"){
-                $('#datatablesSimple td:contains(' + val + ')').each(function(){
-                    if($(this).text().length == 3) $(this).addClass("on");
-                });
-            }
-            else
-                $('#datatablesSimple td:contains(' + val + ')').addClass("on");
+            $('#datatablesSimple td:contains(' + val + ')').addClass("on");
         }
     });
 
@@ -203,5 +189,12 @@ $(document).ready(function(){
     });
     
     $("#btnViewW").trigger('click');
+
+    
+    $(".l5h").each(function(){
+        let val = "5 " + $(this).text();
+        $('#datatablesSimple td:contains(' + val + ')').removeClass("lv5");
+        $('#datatablesSimple td:contains(' + val + ')').addClass("lv5h");
+    });
 });
 

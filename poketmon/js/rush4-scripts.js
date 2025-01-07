@@ -189,5 +189,11 @@ $(document).ready(function(){
     });
     
     $("#btnViewW").trigger('click');
+
+    $(".l5h").each(function(){
+        let val = "5 " + $(this).text();
+        $('#datatablesSimple td:contains(' + val + ')').removeClass("lv5");
+        $('#datatablesSimple td:contains(' + val + ')').addClass("lv5h");
+    });
 });
 
