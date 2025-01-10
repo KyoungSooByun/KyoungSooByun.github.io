@@ -11326,6 +11326,16 @@ body {
   color:#fff !important;
 }
 
+#datatablesSimple td.lv4h{
+  background-color:#ffc107 !important;
+  color:#000 !important;
+}
+
+#datatablesSimple td.lv4h.on{
+  background-color:#dc3545 !important;
+  color:#fff !important;
+}
+
 #datatablesSimple td.lv5.on{
   background-color:#dc3545 !important;
   color:#fff !important;
