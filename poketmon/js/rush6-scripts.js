@@ -196,5 +196,12 @@ $(document).ready(function(){
         $('#datatablesSimple td:contains(' + val + ')').removeClass("lv5");
         $('#datatablesSimple td:contains(' + val + ')').addClass("lv5h");
     });
+
+    $(".l4h").each(function(){
+        let val = "4 " + $(this).text();
+        $('#datatablesSimple td:contains(' + val + ')').removeClass("lv4");
+        $('#datatablesSimple td:contains(' + val + ')').addClass("lv4h");
+    });
+    
 });
 
