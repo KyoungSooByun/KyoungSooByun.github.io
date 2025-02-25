@@ -96,7 +96,7 @@
             <div id="layoutSidenav_content">
                 <main style="overflow-y:scroll; width:100%; height:92%; position: fixed;">
                     <div class="container-fluid">
-                        <h5 class="mt-2">시즌 3탄
+                        <h5 class="mt-2">2025 포켓피스
                             <span class="all" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">전체</button></span>
                             <span class="get" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#b1f579;color: #000;">모은것</button></span>
                             <span class="remain" style="vertical-align: 2px;"><button style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#a3e7f5;color: #000;">남은것</button></span>
@@ -118,12 +118,12 @@
             <div class="tb">
               <div class="inner" style="max-width:95%;">
                 <div class="top">
-                  <div class="title" id="popupTitle">2024 시즌3 띠부씰 도감(154종)</div>
+                  <div class="title" id="popupTitle">2025 포켓피스 띠부씰 도감(114종)</div>
                   <button id="btnPopupClose" style="padding: 0.2rem 0.3rem;font-weight: bold;font-size: 13px;background-color:#ffe598;color: #000;">닫기</button>
                 </div>
                 <div class="ct">
                     <div class="popupContent" id="popupContent" >
-                        <img src="assets/img/2024S3.png" style="width:100%">                        
+                        <img src="assets/2025S1/2025S1.png" style="width:100%">                        
                         
                     </div>                    
                 </div>
@@ -133,23 +133,21 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> 
         <script src="js/jquery.cookie.js" crossorigin="anonymous"></script>
-        <script src="js/data.js?01" ></script>
         <script>
-        let checkPokemon = $.cookie('checkPokemon');
+        let checkPokemon = $.cookie('checkPokemon2025S1');
         
         
         if(typeof checkPokemon == "undefined" && checkPokemon!=null){
             checkPokemon = JSON.parse(checkPokemon);
         }
 
-        $.each (pokemon, function (index, el) {
-            
-            var html = '<li id="'+el.number+'" data-name="'+el.name+'"><div class="image-box"><img src="assets/img/' + el.number+'.jpg?01"></div>';
-            html +=  '<div data-number="'+el.number+'" class="complete' + ((typeof checkPokemon != "undefined" && checkPokemon!=null && checkPokemon.indexOf(el.number) >= 0) ? ' on' : '') + '">Get!</div>';
-            html +=  '</li>';
-            
-            $("#container > ul").append(html);
-        });
+        for(i=1;i<115;i++){
+            var html = '<li id="'+i+'" data-name="img'+i+'"><div class="image-box"><img src="assets/2025S1/2025S1_(' + i + ').jpg"></div>';
+                html +=  '<div data-number="img'+i+'" class="complete' + ((typeof checkPokemon != "undefined" && checkPokemon!=null && checkPokemon.indexOf('img'+i) >= 0) ? ' on' : '') + '">Get!</div>';
+                html +=  '</li>';
+                
+                $("#container > ul").append(html);
+        }
 
         $(".all > button").text("전체("+ $("#container > ul > li").length+")");
 
@@ -171,7 +169,7 @@
                 checkArr.push($(this).data("number"));                
             });
 
-           $.cookie('checkPokemon', JSON.stringify(checkArr), { expires: 365, path: '/' });
+           $.cookie('checkPokemon2025S1', JSON.stringify(checkArr), { expires: 365, path: '/' });
         }
 
         $(".popup").click(function(){
