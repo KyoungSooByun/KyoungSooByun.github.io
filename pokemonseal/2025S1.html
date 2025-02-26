@@ -143,8 +143,8 @@
         }
 
         for(i=1;i<115;i++){
-            var html = '<li id="'+i+'" data-name="img'+i+'"><div class="image-box"><img src="assets/2025S1/2025S1_(' + i + ').jpg"></div>';
-                html +=  '<div data-number="img'+i+'" class="complete' + ((typeof checkPokemon != "undefined" && checkPokemon!=null && checkPokemon.indexOf('img'+i) >= 0) ? ' on' : '') + '">Get!</div>';
+            var html = '<li id="'+i+'" data-name="img'+i+'_poket"><div class="image-box"><img src="assets/2025S1/2025S1_(' + i + ').jpg"></div>';
+                html +=  '<div data-number="img'+i+'_poket" class="complete' + ((typeof checkPokemon != "undefined" && checkPokemon!=null && checkPokemon.indexOf('img'+i+'_poket') >= 0) ? ' on' : '') + '">Get!</div>';
                 html +=  '</li>';
                 
                 $("#container > ul").append(html);
