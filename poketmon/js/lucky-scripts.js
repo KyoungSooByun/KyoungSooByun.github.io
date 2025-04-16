@@ -96,13 +96,31 @@ $(document).ready(function(){
         let tr      = Number(-1  * (Number(valArr[0])-5));
 
         if($(this).hasClass("on")) {
+            
             $(this).removeClass("on");
-            $('#datatablesSimple td:contains(' + val + ')').removeClass("on");
+
+            if(val == "5 뮤"){                
+                $('#datatablesSimple td:contains(' + val + ')').each(function(){
+                    if($(this).text().length == 3) $(this).removeClass("on");
+                });
+            }
+            else
+                $('#datatablesSimple td:contains(' + val + ')').removeClass("on");
+
+            
             $("#poketmonSelect tbody tr:eq("+tr+") button:contains("+valArr[1]+")").removeClass("on");
         }
         else{
             $(this).addClass("on");            
-            $('#datatablesSimple td:contains(' + val + ')').addClass("on");
+            
+            if(val == "5 뮤"){
+                $('#datatablesSimple td:contains(' + val + ')').each(function(){
+                    if($(this).text().length == 3) $(this).addClass("on");
+                });
+            }
+            else
+                $('#datatablesSimple td:contains(' + val + ')').addClass("on");
+
             $("#poketmonSelect tbody tr:eq("+tr+") button:contains("+valArr[1]+")").addClass("on");
         }
     });
